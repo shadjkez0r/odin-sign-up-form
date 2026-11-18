@@ -3,9 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Odin Project</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js" defer></script>
-    <title>Sign up form</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <!-- ЛЕВАЯ КОЛОНКА (Сайдбар с фоном и логотипом) -->
+      <aside class="sidebar">
+        <div class="logo-banner">
+          <img
+            src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png"
+            alt="Odin Logo"
+            class="logo-img"
+          />
+          <span class="logo-text">ODIN</span>
+        </div>
+        <p class="credit">
+          Photo by
+          <a href="https://unsplash.com/@haliewestphoto" target="_blank"
+            >Halie West</a
+          >
+          on Unsplash
+        </p>
+      </aside>
+
+      <!-- ПРАВАЯ КОЛОНКА (Контент + Форма) -->
+      <main class="content">
+        <!-- Верхний текст -->
+        <section class="intro">
+          <p>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams.
+          </p>
+          <p>
+            Sign up <em>now</em> to get started. You <em>know</em> you want to.
+          </p>
+        </section>
+
+        <!-- Сама форма (белая карточка с тенью) -->
+        <section class="form-section">
+          <h2>Let's do this!</h2>
+          <form id="signup-form" action="#" method="POST">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="first_name">FIRST NAME</label>
+                <input
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  placeholder="Thor"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="last_name">LAST NAME</label>
+                <input
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  placeholder="Odinson"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="thor@asgard.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">PHONE NUMBER</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+1 234 567 8900"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  minlength="8"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="confirm_password">CONFIRM PASSWORD</label>
+                <input
+                  type="password"
+                  id="confirm_password"
+                  name="confirm_password"
+                  minlength="8"
+                  required
+                />
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <!-- Нижняя часть с кнопкой -->
+        <section class="action-section">
+          <!-- Кнопка привязана к форме через атрибут form="signup-form" -->
+          <button type="submit" form="signup-form" class="btn-submit">
+            Create Account
+          </button>
+          <p class="login-prompt">
+            Already have an account? <a href="#">Log in</a>
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

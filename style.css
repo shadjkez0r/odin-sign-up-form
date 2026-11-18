@@ -1,0 +1,189 @@
+/* 1. Сброс и базовые стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #1f2937;
+  background-color: #f9fafb;
+}
+
+/* 2. Общий контейнер: Split-screen на всю высоту экрана */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 3. Левая колонка (Сайдбар) */
+.sidebar {
+  flex: 0 0 38%;
+  background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+/* Полупрозрачная плашка с логотипом */
+.logo-banner {
+  width: 100%;
+  margin-top: 18vh;
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.logo-img {
+  height: 80px;
+}
+
+.logo-text {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 4px;
+}
+
+.credit {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* 4. Правая колонка (Контент) */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f9fafb;
+}
+
+/* Верхний текст */
+.intro {
+  padding: 2rem 3rem;
+  max-width: 700px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.intro p + p {
+  margin-top: 1.2rem;
+}
+
+/* Секция с формой (Белая плашка) */
+.form-section {
+  background-color: #ffffff;
+  padding: 1.5rem 3rem 2rem 3rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.form-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  color: #111827;
+}
+
+/* Сетка инпутов: 2 колонки */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 260px));
+  gap: 1.25rem 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4b5563;
+}
+
+/* Стили самих инпутов */
+.form-group input {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* 5. Интерактивные состояния по ТЗ */
+
+/* Состояние при фокусе (синий бордер + мягкая тень) */
+.form-group input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Ошибка валидации (:user-invalid срабатывает после ввода чуши) */
+.form-group input:user-invalid {
+  border-color: #ef4444;
+}
+
+/* 6. Кнопка и логин */
+.action-section {
+  padding: 2rem 3rem;
+}
+
+.btn-submit {
+  background-color: #596D48; /* Фирменный зеленый цвет из ТЗ */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+  background-color: #48583a;
+}
+
+.btn-submit:active {
+  transform: translateY(1px);
+}
+
+.login-prompt {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.login-prompt a {
+  color: #596D48;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
